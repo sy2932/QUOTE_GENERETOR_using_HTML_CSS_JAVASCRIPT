@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+</head>
+<style>
+    .box{
+        width: 100%;
+        height: 600px;
+        background-color: #FEE140;
+        
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .window{
+        width: 450px;
+        height: 450px;
+        background-image: url('https://e1.pxfuel.com/desktop-wallpaper/127/452/desktop-wallpaper-49-rabindranath-ideas-rabindranath-thakur-thumbnail.jpg');
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        animation: yash  30s ease-in 3s infinite ;
+        
+
+    }
+    @keyframes yash{
+                0%{
+                    background-image: url('https://c8.alamy.com/comp/ERHDKN/rabindranath-tagore-hindu-poet-1861-1941-photograph-long-white-beard-ERHDKN.jpg');
+                }
+                30%{
+                    background-image: url('https://t3.ftcdn.net/jpg/05/73/34/22/240_F_573342289_X8XCgQsI2L82Ua2xSrBfcNoDLMNUArMs.jpg');
+                }
+                60%{
+                    background-image: url('https://t4.ftcdn.net/jpg/04/55/55/55/240_F_455555597_TUic0SwOkPQy6fNAjKwYU6ViDyEosAk2.jpg');
+                }
+                90%{
+                    background-image: url('https://t4.ftcdn.net/jpg/05/49/63/13/240_F_549631386_eMzJMGAHLkBcbzTFjwdljdGa9va6eq4q.jpg');
+                }
+                100%{
+                    background-image: url('https://t3.ftcdn.net/jpg/03/94/33/10/240_F_394331009_AmNmOLrqsNiBHIWpRd6JG9btFOzgckCd.jpg');
+                }
+                
+            }
+    .quote-area{
+        width: 370px;
+        height: 100px;
+        margin-top: 330px;
+        opacity: 0.9;
+    }
+    .quote{
+        color: black;
+        font-weight: 900;
+        font-size: larger;
+        
+    }
+    .mybutton{
+        background-color: gold;
+        color: black;
+        padding: 5px;
+        width: 100px;
+        height: 50px;
+        border-radius: 5px;
+        font-weight: 800;
+    }
+    .mybutton:hover{
+        background-color: rgb(25, 161, 224)
+        
+        
+    }
+
+</style>
+<body>
+
+    <div class="box">
+
+        <div class="window">
+
+        <div class="quote-area">
+            <span class="quote">
+                বিধাতার রাজ্যে ভালো জিনিস অল্প বলেই তা ভালো, নইলে সে নিজেরই ভিড়ের ঠেলায় হয়ে যেত মাঝারি।
+
+            </span>
+        
+        </div>
+
+        </div>
+
+
+        <button id="new-quote" class="mybutton"> তোমার জন্য</button>
+
+    </div>
+
+    <script>
+
+        let btn = document.querySelector('#new-quote');
+        let quote = document.querySelector('.quote');
+
+        const quotes = [
+            {
+                quote: "জীবন আমাদের দেওয়া হয়েছে, আমরা তা দিয়ে উপার্জন করি।"
+
+
+            },
+            {
+                quote : "সঙ্গীত দুটি আত্মার মধ্যে অসীম পূর্ণ করে।"
+
+            },
+            {
+                quote : "যারা অনেক কিছুর মালিক তাদের ভয় পাওয়ার অনেক কিছু আছে।"
+
+            },
+            {
+                quote :"একটি শিশুকে আপনার নিজের শিক্ষার মধ্যে সীমাবদ্ধ করবেন না, কারণ সে অন্য সময়ে জন্মগ্রহণ করেছে।"
+
+            },
+            {
+                quote : "শিল্প হল বাস্তবের ডাকে মানুষের সৃজনশীল আত্মার সাড়া।"
+
+            },
+            {
+                quote :"সর্বোচ্চ শিক্ষা হল সেই শিক্ষা যা আমাদের কেবল তথ্যই দেয় না বরং আমাদের জীবনকে সমস্ত অস্তিত্বের সাথে সামঞ্জস্যপূর্ণ করে তোলে।"
+
+            },
+            {
+                quote : "তার পাপড়ি ছিঁড়ে, তুমি ফুলের সৌন্দর্য সংগ্রহ করো না।"
+
+            },
+            {
+                quote : "আপনি কেবল দাঁড়িয়ে এবং জলের দিকে তাকিয়ে সমুদ্র অতিক্রম করতে পারবেন না।"
+                
+            },
+            {
+                quote : "মেঘ আমার জীবনে ভেসে আসে, আর বৃষ্টি বা ঝড় বয়ে আনতে নয়, আমার সূর্যাস্তের আকাশে রঙ যোগ করতে।"
+
+            },
+            {
+                quote : "আপনি যদি সমস্ত ত্রুটির দরজা বন্ধ করে দেন তবে সত্য বন্ধ হয়ে যাবে।"
+
+            },
+            {
+                quote :"সমস্ত যুক্তির একটি মন একটি ছুরি এবং ব্লেড মত. এটি হাতের রক্তপাত করে যে এটি ব্যবহার করে।"
+
+            },
+            {
+                quote : "আপনার জীবন পাতার ডগায় শিশিরের মতো সময়ের প্রান্তে হালকাভাবে নাচতে দিন।"
+
+            },
+            {
+                quote : "বিশ্বাস হল সেই পাখি যে ভোরের অন্ধকার থাকতেই আলো অনুভব করে।"
+
+            },
+            {
+                quote : "প্রজাপতি মাস নয়, মুহূর্ত গণনা করে, এবং যথেষ্ট সময় আছে।"
+
+            },
+            {
+                quote : "ভালোবাসা অধিকার দাবি করে না, স্বাধীনতা দেয়।"
+
+            },
+            {
+                quote : "সবকিছু আমাদের কাছে আসে যদি আমরা তা গ্রহণ করার ক্ষমতা তৈরি করি।"
+
+            },
+            {
+                quote : "সৌন্দর্য হল সত্যের হাসি যখন সে একটি নিখুঁত আয়নায় নিজের মুখ দেখে।"
+
+            },
+            {
+                quote : "বন্ধুত্বের গভীরতা পরিচয়ের দৈর্ঘ্যের উপর নির্ভর করে না।"
+
+            },
+            {
+                quote : "মাটির বন্ধন থেকে মুক্তি বৃক্ষের মুক্তি নয়।"
+
+            },
+           
+
+
+
+
+
+        ];
+
+        btn.addEventListener('click',function() {
+
+            let random = Math.floor(Math.random()*quotes.length);
+
+            quote.innerText = quotes[random].quote;
+
+
+
+        })
+
+          
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
